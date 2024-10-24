@@ -14,6 +14,24 @@ if [ -d "mkdocs-resumen/templates" ]; then
   rm -r mkdocs-resumen/templates
 fi
 
+# Clonar el repositorio plantilla
+git clone https://github.com/IES-Rafael-Alberti/plantilla-pd-informatica.git
+
+# Comprobar si la carpeta 'plantilla-pd-informatica' existe
+if [ -d "plantilla-pd-informatica" ]; then
+    # Eliminar la carpeta 'templates' actual en el directorio donde se ha hecho el clone
+    rm -rf templates
+
+    # Mover la carpeta 'templates' del repositorio clonado
+    mv plantilla-pd-informatica/templates .
+
+    # Eliminar la carpeta 'plantilla-pd-informatica'
+    rm -rf plantilla-pd-informatica
+else
+    echo "Error: No se pudo clonar el repositorio o la carpeta 'plantilla-pd-informatica' no existe."
+    exit 1
+fi
+
 # Generamos la configuración de los archivos a partir de src/datos.yml y el template
 python scripts/generate-config.py
 
