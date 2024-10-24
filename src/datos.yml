@@ -1,0 +1,18 @@
+# Título del ciclo
+titulo: "Curso"
+
+# Año en el que comienza el curso
+inicio_curso: 2024
+
+# Acrónimo o nombre corto del curso: SMR, DAM, DAW, CIBER...
+acronimo_curso: "PLANTILLA"
+
+# Indica si el ciclo tiene curso en primero o segundo. Puede ser sí (1) o no (0)
+tiene_mas_de_un_curso: 0
+
+# Puede ser 1 o 2. Si es curso único, es 1 también
+curso: 1
+
+# OPCIONAL (por defecto se coge de la tabla de la Programación Didáctica)
+# Versión actual del documento. Formato recomendado: "XX".
+#version_documento: "01"

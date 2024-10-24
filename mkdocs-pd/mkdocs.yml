@@ -1,0 +1,19 @@
+site_name: Programación Didáctica
+theme:
+  name: material
+
+plugins:
+  - with-pdf:
+      copyright: CC BY-SA 4.0
+      #debug_html: true
+      cover: true
+      toc_title: "Índice"
+      cover_title: Programación Didáctica
+      cover_subtitle: Curso
+      cover_logo: assets/portada-ies-rafael-alberti.svg
+      custom_template_path: docs/templates
+      output_path: ../../2024_PLANTILLA_vrs_2.pdf
+extra:
+  course_year: "Curso 2024 / 2025"
+  department: "Departamento de informática"
+  institution: "IES Rafael Alberti, Cádiz"
