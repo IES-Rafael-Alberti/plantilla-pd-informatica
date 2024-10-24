@@ -19,8 +19,10 @@ git clone https://github.com/IES-Rafael-Alberti/plantilla-pd-informatica.git
 
 # Comprobar si la carpeta 'plantilla-pd-informatica' existe
 if [ -d "plantilla-pd-informatica" ]; then
+    if [ -d "templates" ]; then
     # Eliminar la carpeta 'templates' actual en el directorio donde se ha hecho el clone
-    rm -rf templates
+      rm -rf templates
+    fi
 
     # Mover la carpeta 'templates' del repositorio clonado
     mv plantilla-pd-informatica/templates .
