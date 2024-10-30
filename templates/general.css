@@ -1,78 +1,68 @@
-@page :first {
-    size: A4;
-    margin: 2cm 2cm 11cm 1cm;
-    background-image: url('{{ cover_logo | to_url }}');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
-@page {
-    size: A4;
-    margin: 2.54cm; /* Aplica margen de 2.54cm a todo el documento */
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
-#doc-cover {
-    display: flex;
-    flex-direction: column;
-    height: 16.7cm; /* Altura total de la página */
-    color: white !important;
-    overflow: hidden; /* Previene desbordamiento */
-}
-
-.cover-year {
-    flex: 0 0 2cm;
-    background-color: #E93456  !important;
-    text-align: right;
-    font-size: 11pt;
-    margin: 0cm;
-    color: white !important;
-}
-
-.cover-title {
-    flex: 0 0 18cm; /* Permite que crezca y ocupe el espacio disponible */
-    max-height: 18cm;
-    background-color: #E93456  !important;
-    align-items: flex-start;
-    text-align: left !important;
-    padding: 1cm;
-    margin: 0cm;
-    color: white !important;
-
-    h1 {
-        padding-top: 4cm;
-        font-size: 36pt;
-        border-bottom: none !important; 
-        margin-bottom: 0.4cm; /* Reduce la separación inferior de h1 */
+    @page {
+        size: A4;
+        margin: 2.54cm; 
+        font-family: 'Source Sans Pro', sans-serif;
     }
-    h2 {
-        border-bottom: none !important; 
-        font-size: 16pt;
-        margin-top: 0; /* Elimina el margen superior de h2 */
+    @page :first {
+        size: A4;
+        margin-left: 1cm;  
+        margin-right: 2cm;  
+        margin-bottom: 10cm;  
+        margin-top: 2cm;  
+
+        padding: 0;
+        background-image: url('{{ cover_logo | to_url }}');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+        font-family: 'Source Sans Pro', sans-serif;
+
     }
-}
+    #doc-cover {
+        background-color: #E93456  !important;
+        color: white  !important;
+        .course {
+            text-align: right;
+            font-size: 11pt;
+        }
+        .wrapper {
+            background-color: #E93456  !important;
+            text-align: left !important;
+            h1 {
+                padding-top: 5cm;
+                border-bottom: none !important; 
+                margin-bottom: 0.4cm; 
+            }
+            h2 {
+                border-bottom: none !important; 
+                font-size: 16pt;
+                margin-top: 0; 
+            }
+        }
+    }
+    .properties {
+         text-align: left !important;
+         position: absolute;
+         bottom: -14.2cm; 
+         left: 0cm;
+         background-color: #E93456  !important;
+         color: white  !important;
+         font-size: 11pt;
+         margin-left: 1.1cm;  
 
-.cover-department {
-    text-align: left !important;
-    position: absolute;
-    bottom: -10cm; /* Ajusta la distancia desde el borde inferior */
-    left: 0cm;    
-    background-color: #E93456  !important;
-    color: white !important;
-    max-width: 70%;
-    padding: 1cm;
-    overflow-y: auto; /* Permite scroll si el contenido es muy largo */
-}
+        p {
+            margin-bottom: 0.3cm; 
+            margin-top: 0; 
+        }
+    }
+    
+    article h1 {
+        border-bottom: 2px solid #E93456  !important; }
 
-/* El resto de tus estilos permanecen igual */
-.cover-title h1 {
-    border-bottom: 1px solid #E93456  !important; }
-
-.cover-title h2 {
-    border-bottom: 1px solid #E93456  !important; }
+    article h2 {
+        border-bottom: 1px solid #FFE5EA  !important; }
 
 @font-face {
     font-family: 'Source Sans Pro';
@@ -84,8 +74,8 @@
 @font-face {
     font-family: 'Source Sans Pro';
     src: url('assets/fonts/SourceSans3-Bold.ttf.woff') format('woff');
-    font-weight: bold; /* O ajusta según sea necesario */
-    font-style: italic; /* Cambia a normal si no deseas itálico */
+    font-weight: bold; 
+    font-style: italic; 
 }
 
 body {
