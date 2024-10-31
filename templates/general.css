@@ -24,7 +24,6 @@
 }
 
 .wrapper {
-    position: relative; /* Posicionamiento para contenido absoluto */
     padding: 2cm;
     background-image: url('{{ cover_logo | to_url }}');
     background-position: center;
@@ -58,7 +57,6 @@
     }
 
     .properties {
-        position: absolute;
         bottom: 2cm; /* Ubica al pie del wrapper */
         
         p {
