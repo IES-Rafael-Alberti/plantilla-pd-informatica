@@ -1,69 +1,3 @@
-    @page {
-        size: A4;
-        margin: 2.54cm; 
-        font-family: 'Source Sans Pro', sans-serif;
-    }
-    @page :first {
-        size: A4;
-        margin-left: 1cm;  
-        margin-right: 2cm;  
-        margin-bottom: 10cm;  
-        margin-top: 2cm;  
-
-        padding: 0;
-        background-image: url('{{ cover_logo | to_url }}');
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-
-        font-family: 'Source Sans Pro', sans-serif;
-
-    }
-    #doc-cover {
-        background-color: #E93456  !important;
-        color: white  !important;
-        .course {
-            text-align: right;
-            font-size: 11pt;
-        }
-        .wrapper {
-            background-color: #E93456  !important;
-            text-align: left !important;
-            h1 {
-                padding-top: 5cm;
-                border-bottom: none !important; 
-                margin-bottom: 0.4cm; 
-            }
-            h2 {
-                border-bottom: none !important; 
-                font-size: 16pt;
-                margin-top: 0; 
-            }
-        }
-    }
-    .properties {
-         text-align: left !important;
-         position: absolute;
-         bottom: -14.2cm; 
-         left: 0cm;
-         background-color: #E93456  !important;
-         color: white  !important;
-         font-size: 11pt;
-         margin-left: 1.1cm;  
-
-        p {
-            margin-bottom: 0.3cm; 
-            margin-top: 0; 
-        }
-    }
-    
-    article h1 {
-        border-bottom: 2px solid #E93456  !important; }
-
-    article h2 {
-        border-bottom: 1px solid #FFE5EA  !important; }
-
 @font-face {
     font-family: 'Source Sans Pro';
     src: url('assets/fonts/SourceSans3-Regular.ttf.woff') format('woff');
@@ -74,8 +8,65 @@
 @font-face {
     font-family: 'Source Sans Pro';
     src: url('assets/fonts/SourceSans3-Bold.ttf.woff') format('woff');
-    font-weight: bold; 
-    font-style: italic; 
+    font-weight: bold;
+    font-style: italic;
+}
+
+@page {
+    size: A4;
+    margin: 2.54cm; /* Establece margen general */
+    font-family: 'Source Sans Pro', sans-serif;
+    background: none;
+}
+
+@page :first {
+    margin: 0; /* Sin margen en la primera página */
+}
+
+.wrapper {
+    position: relative; /* Posicionamiento para contenido absoluto */
+    padding: 2cm;
+    background-image: url('{{ cover_logo | to_url }}');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+
+    h1,
+    h2 {
+        border-bottom: none !important;
+        text-align: left !important;
+        padding-left: 1cm;
+    }
+
+    h1 {
+        padding-top: 6cm;
+        font-size: 36pt;
+        margin-bottom: 0.4cm;
+    }
+
+    h2 {
+        font-size: 18pt;
+    }
+
+    .upper p {
+        font-size: 11pt;
+        text-align: right;
+        padding-top: 2cm;
+        padding-right: 1cm;
+    }
+
+    .properties {
+        position: absolute;
+        bottom: 2cm; /* Ubica al pie del wrapper */
+        
+        p {
+            padding-left: 1cm;
+            font-size: 11pt;
+            margin-top: 0.4cm;
+        }
+    }
 }
 
 body {
@@ -87,27 +78,24 @@ p {
 }
 
 table {
-  border-collapse: collapse !important;
-  width: 100% !important;
+    border-collapse: collapse !important;
+    width: 100% !important;
 
-  tr {
-    &:nth-child(even) {
-      background-color: #FFE5EA;
+    tr:nth-child(even) {
+        background-color: #FFE5EA;
     }
-  }
 
-  th {
-    background-color: #E93456 !important;
-    color: white !important;
-    font-weight: bold !important;
-    padding: 10px !important;
-    text-transform: uppercase;
-  }
+    th {
+        background-color: #E93456 !important;
+        color: white !important;
+        font-weight: bold !important;
+        padding: 10px !important;
+        text-transform: uppercase;
+    }
 
-  th, td {
-    vertical-align: middle !important;
-    text-align: left !important;
-    padding: 10px !important;
-    height: 100% !important;
-  }
+    th, td {
+        vertical-align: middle !important;
+        text-align: left !important;
+        padding: 10px !important;
+    }
 }

@@ -1,18 +1,15 @@
 <article id="doc-cover">
-    <p class="course">{{course_year}}</p>
     <div class="wrapper">
+        <div class="upper">
+            <p>{{course_year}}</p>
+        </div>
         <h1>{{ cover_title | e }}</h1>
         <h2>{{ cover_subtitle | e }}</h2>
+        <div class="properties">
+            <p>---------------------------------------------</p>
+            <p id="author">{{ department | e }}</p>
+            <p id="copyright">{{ institution | e }}</p>
+            </address>
+        </div>
     </div>
 </article>
-<div class="properties">
-    <address>
-            <p>---------------------------------------------</p>
-        {% if department is defined %}
-            <p id="department">{{ department | e }}</p>
-        {% endif %}
-        {% if institution is defined %}
-        <p id="institution">{{ institution | e }}</p>
-        {% endif %}
-    </address>
-</div>
