@@ -1,20 +1,6 @@
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('assets/fonts/SourceSans3-Regular.ttf.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('assets/fonts/SourceSans3-Bold.ttf.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
-}
-
 @page {
     size: A4;
-    margin: 2.54cm; /* Establece margen general */
+    margin: 2.54cm;
     font-family: 'Source Sans Pro', sans-serif;
     background: none;
 }
@@ -24,23 +10,47 @@
 }
 
 .wrapper {
+    display: flex;
+    flex-direction: column; /* Disposición en columna de los bloques */
+    justify-content: space-between;
+    align-items: stretch;
     padding: 2cm;
-    background-image: url('{{ cover_logo | to_url }}');
+    background-image: url('{{ cover_logo | to_url }}'); /* Imagen de fondo */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: white;
+    width: 21cm; /* Anchura de A4 */
+    height: 29.7cm; /* Altura de A4 */
+    max-width: 21cm;
+    min-width: 21cm;
+    max-height: 29.7cm;
+    min-height: 29.7cm;
+}
 
-    h1,
-    h2 {
+.upper {
+    flex: 0 0 2.97cm; /* Ocupa el 10% de la altura total */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Alineación a la derecha */
+}
+
+.title {
+    flex: 0 0 20.79cm; /* Ocupa el 70% de la altura total */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente el título y subtítulo */
+
+    h1, h2 {
         border-bottom: none !important;
         text-align: left !important;
         padding-left: 1cm;
+        margin: 0;
     }
 
     h1 {
-        padding-top: 6cm;
+        padding-top: 1cm;
         font-size: 36pt;
         margin-bottom: 0.4cm;
     }
@@ -48,22 +58,21 @@
     h2 {
         font-size: 18pt;
     }
+}
 
-    .upper p {
+.properties {
+    flex: 0 0 5.94cm; /* Ocupa el 20% de la altura total */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Alineación en la parte inferior */
+    align-items: flex-start;
+    gap: 0.2cm; /* Espaciado entre párrafos */
+    padding-bottom: 1cm;
+
+    p {
+        padding-left: 1cm;
         font-size: 11pt;
-        text-align: right;
-        padding-top: 2cm;
-        padding-right: 1cm;
-    }
-
-    .properties {
-        bottom: 2cm; /* Ubica al pie del wrapper */
-        
-        p {
-            padding-left: 1cm;
-            font-size: 11pt;
-            margin-top: 0.4cm;
-        }
+        margin: 0; /* Sin márgenes adicionales */
     }
 }
 

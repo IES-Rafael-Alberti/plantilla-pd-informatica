@@ -1,15 +1,16 @@
 <article id="doc-cover">
     <div class="wrapper">
         <div class="upper">
-            <p>{{course_year}}</p>
+            <p>{{course_year}}</p> <!-- Año del curso, alineado a la derecha -->
         </div>
-        <h1>{{ cover_title | e }}</h1>
-        <h2>{{ cover_subtitle | e }}</h2>
+        <div class="title">
+            <h1>{{ cover_title | e }}</h1> <!-- Título principal -->
+            <h2>{{ cover_subtitle | e }}</h2> <!-- Subtítulo -->
+        </div>
         <div class="properties">
-            <p>---------------------------------------------</p>
-            <p id="author">{{ department | e }}</p>
-            <p id="copyright">{{ institution | e }}</p>
-            </address>
+            <p>---------------------------------------------</p> <!-- Línea separadora -->
+            <p id="author">{{ department | e }}</p> <!-- Departamento -->
+            <p id="copyright">{{ institution | e }}</p> <!-- Institución -->
         </div>
     </div>
 </article>
