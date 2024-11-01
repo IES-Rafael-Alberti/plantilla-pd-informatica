@@ -1,0 +1,1082 @@
+<html><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="file:///media/rv3/Almacenamiento/Documentos/0%20-%20Github%20Repos/Otros/PD%20Repos/PD%20Plantilla/mkdocs-pd/site/assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.42" name="generator"/>
+<title>Introducción - Programación Didáctica</title>
+<link href="file:///media/rv3/Almacenamiento/Documentos/0%20-%20Github%20Repos/Otros/PD%20Repos/PD%20Plantilla/mkdocs-pd/site/assets/stylesheets/main.0253249f.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<style>@charset "UTF-8";
+:root {
+  string-set: author '', copyright 'CC BY-SA 4.0', title 'Programación Didáctica'; }
+
+h1, h2, h3 {
+  string-set: chapter content(); }
+@page {
+  size: a4 portrait;
+  margin: 25mm 10mm 25mm 10mm;
+  counter-increment: page;
+  white-space: pre;
+  color: grey;
+  @top-right {
+    font-size: 7pt;
+    content: string(chapter); }
+  @bottom-center {
+    font-size: 8pt;
+    content: "- " counter(page) "/" counter(pages) " -"; }
+  @bottom-right {
+    font-size: 6pt;
+    content: string(copyright); } }
+
+@media print {
+  body {
+    background: none;
+    background-color: #fff; } }
+
+article,
+section + section {
+  page-break-before: always;
+  min-height: 100vh;
+  /* Defining all page breaks */ }
+  article,
+  article h1,
+  article h2,
+  article h3,
+  article h4,
+  article h5,
+  article h6,
+  article div.tabbed-content--wrap > .tabbed-content,
+  section + section,
+  section + section h1,
+  section + section h2,
+  section + section h3,
+  section + section h4,
+  section + section h5,
+  section + section h6,
+  section + section div.tabbed-content--wrap > .tabbed-content {
+    clear: both; }
+  article h1,
+  article h2,
+  article h3,
+  article h4,
+  article h5,
+  article h6,
+  article img,
+  section + section h1,
+  section + section h2,
+  section + section h3,
+  section + section h4,
+  section + section h5,
+  section + section h6,
+  section + section img {
+    page-break-after: avoid;
+    page-break-inside: avoid; }
+  article a,
+  article blockquote,
+  article table,
+  article ul,
+  article ol,
+  section + section a,
+  section + section blockquote,
+  section + section table,
+  section + section ul,
+  section + section ol {
+    page-break-before: avoid;
+    page-break-inside: avoid; }
+  article pre,
+  article dt + dd,
+  section + section pre,
+  section + section dt + dd {
+    page-break-before: avoid; }
+  article h1 + ul,
+  article h2 + ul,
+  article h3 + ul,
+  article h4 + ul,
+  article h5 + ul,
+  article h6 + ul,
+  article h1 + ol,
+  article h2 + ol,
+  article h3 + ol,
+  article h4 + ol,
+  article h5 + ol,
+  article h6 + ol,
+  section + section h1 + ul,
+  section + section h2 + ul,
+  section + section h3 + ul,
+  section + section h4 + ul,
+  section + section h5 + ul,
+  section + section h6 + ul,
+  section + section h1 + ol,
+  section + section h2 + ol,
+  section + section h3 + ol,
+  section + section h4 + ol,
+  section + section h5 + ol,
+  section + section h6 + ol {
+    page-break-inside: auto; }
+  article div.admonition,
+  section + section div.admonition {
+    page-break-inside: avoid; }
+  article div.tabbed-content--wrap,
+  section + section div.tabbed-content--wrap {
+    page-break-inside: avoid; }
+  article * + div.highlight,
+  article * + div.tabbed-set,
+  section + section * + div.highlight,
+  section + section * + div.tabbed-set {
+    page-break-before: avoid; }
+
+section.two-columns {
+  columns: 2;
+  column-gap: 1cm; }
+
+article h1 {
+  border-bottom: 2px solid #f00; }
+
+article h2 {
+  border-bottom: 1px solid #f99; }
+
+article h3 {
+  border-bottom: 0.5px solid #eee; }
+
+article h1 > .pdf-order,
+article h2 > .pdf-order,
+article h3 > .pdf-order {
+  padding-left: 6px; }
+
+article#doc-toc {
+  margin: 0 .8rem 1.2rem;
+  padding-top: .6rem;
+  font-size: 12pt;
+  line-height: 1.6; }
+  article#doc-toc > h1 {
+    margin: 0 0 2rem;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: -.01em;
+    page-break-after: auto;
+    page-break-inside: auto;
+    bookmark-level: none; }
+    article#doc-toc > h1::before {
+      display: block;
+      margin-top: -9px;
+      padding-top: 9px;
+      content: ""; }
+  article#doc-toc ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 1em;
+    font-size: 8pt;
+    page-break-inside: auto !important; }
+  article#doc-toc li {
+    list-style: none; }
+    article#doc-toc li > a {
+      color: inherit;
+      text-decoration: none;
+      padding-top: 0.4rem;
+      border-bottom: 1px dotted #ddd;
+      display: inline-block;
+      width: 100%; }
+      article#doc-toc li > a > .pdf-order {
+        padding-right: 0.5em; }
+      article#doc-toc li > a::after {
+        float: right;
+        content: target-counter(attr(href), page); }
+
+@media print {
+  html {
+    font-size: 95%;
+    font-family: 'Kelmscott Roman NF', 'Noto Serif JP', serif; }
+  body {
+    font-size: 10.5pt;
+    font-family: 'Classico URW T OT', 'Noto Serif JP', serif; }
+  article {
+    font-size: 0.8rem;
+    line-height: 1.6; }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  label {
+    font-family: 'Gentium Book Basic', 'Helvetica Neue', Helvetica, Arial, 'Noto Sans JP', 'Roboto', sans-serif; }
+  pre,
+  code,
+  var,
+  samp,
+  kbd,
+  tt {
+    font-family: 'Noto Sans Mono CJK JP', 'Courier New', monospace, serif;
+    font-size: 0.8em; }
+  pre code,
+  pre var,
+  pre samp,
+  pre kbd,
+  pre tt {
+    font-size: 100%; } }
+@page :first {
+  @top-right {
+    content: normal; }
+  @bottom-center {
+    content: normal; }
+  @bottom-right {
+    content: normal; } }
+
+article#doc-cover {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; }
+  article#doc-cover > .wrapper {
+    flex: 1 0 auto;
+    text-align: center;
+    padding: 0 3rem; }
+    article#doc-cover > .wrapper.upper {
+      flex: 1 1 auto;
+      max-height: 30vh; }
+      article#doc-cover > .wrapper.upper > .logo {
+        width: 100%;
+        height: 100%;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: contain; }
+    article#doc-cover > .wrapper h1 {
+      font-size: 36pt;
+      line-height: 1.4; }
+    article#doc-cover > .wrapper h2 {
+      border: none;
+      bookmark-level: none; }
+  article#doc-cover > .properties {
+    flex: 0 0 auto;
+    text-align: right;
+    padding: 0 2rem; }
+    article#doc-cover > .properties p#copyright {
+      font-size: 80%; }
+
+article#doc-back_cover {
+  page: back_cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center; }
+  article#doc-back_cover .wrapper {
+    flex: 1 0 auto;
+    display: inline-block;
+    background: #eee; }
+  article#doc-back_cover .qrcode {
+    display: inline-block;
+    flex: 0 0 auto;
+    background: #eee; }
+    article#doc-back_cover .qrcode > a {
+      display: inline-block;
+      padding: 0.5em 2em;
+      border-radius: 1em;
+      background-color: #fff; }
+      article#doc-back_cover .qrcode > a img {
+        width: 100%;
+        height: auto; }
+
+@page back_cover {
+  background-color: #eee;
+  @top-right {
+    content: normal; }
+  @bottom-center {
+    content: normal; }
+  @bottom-left {
+    font-size: 8pt;
+    content: string(title); }
+  @bottom-right {
+    font-size: 8pt;
+    content: string(copyright); } }
+</style><style>@media print {
+  .md-typeset .tabbed-set {
+    display: block; }
+    .md-typeset .tabbed-set .tabbed-content--wrap {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 0.25rem; }
+      .md-typeset .tabbed-set .tabbed-content--wrap > input {
+        display: none; }
+      .md-typeset .tabbed-set .tabbed-content--wrap > label {
+        background-color: rgba(170, 170, 170, 0.2);
+        padding: 0.2rem 2rem;
+        margin: 0;
+        font-weight: 600;
+        color: #666;
+        border-radius: 3px 3px 0 0;
+        border-bottom-color: transparent; }
+      .md-typeset .tabbed-set .tabbed-content--wrap > .tabbed-content {
+        display: block;
+        box-shadow: none; }
+  .md-typeset .admonition-title + .tabbed-set:last-child,
+  .md-typeset summary + .tabbed-set:last-child {
+    margin-top: 0.5rem; }
+  .md-typeset > details summary::after {
+    display: none; }
+  .md-typeset > div, .md-typeset > div.admonition, .md-typeset > details, .md-typeset > div.tabbed-set, .md-typeset > blockquote, .md-typeset > mark, .md-typeset > table, .md-typeset > p {
+    margin-left: 0.7rem; }
+  .md-typeset > table.highlighttable {
+    margin: 0 0 0 0.7rem; }
+  .md-typeset table.highlighttable,
+  .md-typeset table.highlighttable > tbody {
+    width: 100%; }
+  .md-typeset table.highlighttable {
+    padding-bottom: 0.5em; }
+    .md-typeset table.highlighttable .linenos {
+      padding-bottom: 0; }
+  .md-typeset > ul {
+    margin-left: 1.5rem; }
+  .md-typeset h4,
+  .md-typeset h5,
+  .md-typeset h6 {
+    margin-left: 0.25rem; }
+  .md-typeset *:not(h3) + h4 {
+    margin-top: 1.5rem; }
+  .md-typeset hr {
+    border-bottom: 1px dotted #999; }
+  .md-typeset .footnote {
+    line-height: 1.1; }
+  .md-typeset table:not([class]) th, .md-typeset table:not([class]) td {
+    padding: 0.5em 1.25rem 0.4em; }
+  .md-typeset table:not([class]) td {
+    border-bottom: 1px solid #eee; }
+  .md-typeset span.twemoji {
+    vertical-align: middle;
+    height: 1.125rem;
+    display: inline-block; }
+    .md-typeset span.twemoji > img {
+      height: 1.125rem;
+      vertical-align: middle;
+      display: inline-block; } }
+.md-typeset kbd {
+  vertical-align: middle;
+  border-color: #b8b8b8;
+  border-style: outset;
+  border-width: .05rem .075rem .1rem .075rem;
+  border-radius: .25rem;
+  box-shadow: none; }
+
+:root {
+  --print-md-admonition-icon--note: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23448aff"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>');
+  --print-md-admonition-icon--abstract: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300b0ff"><path d="M4 5h16v2H4V5m0 4h16v2H4V9m0 4h16v2H4v-2m0 4h10v2H4v-2z"/></svg>');
+  --print-md-admonition-icon--info: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300b8d4"><path d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2z"/></svg>');
+  --print-md-admonition-icon--tip: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300bfa5"><path d="M17.66 11.2c-.23-.3-.51-.56-.77-.82-.67-.6-1.43-1.03-2.07-1.66C13.33 7.26 13 4.85 13.95 3c-.95.23-1.78.75-2.49 1.32-2.59 2.08-3.61 5.75-2.39 8.9.04.1.08.2.08.33 0 .22-.15.42-.35.5-.23.1-.47.04-.66-.12a.58.58 0 01-.14-.17c-1.13-1.43-1.31-3.48-.55-5.12C5.78 10 4.87 12.3 5 14.47c.06.5.12 1 .29 1.5.14.6.41 1.2.71 1.73 1.08 1.73 2.95 2.97 4.96 3.22 2.14.27 4.43-.12 6.07-1.6 1.83-1.66 2.47-4.32 1.53-6.6l-.13-.26c-.21-.46-.77-1.26-.77-1.26m-3.16 6.3c-.28.24-.74.5-1.1.6-1.12.4-2.24-.16-2.9-.82 1.19-.28 1.9-1.16 2.11-2.05.17-.8-.15-1.46-.28-2.23-.12-.74-.1-1.37.17-2.06.19.38.39.76.63 1.06.77 1 1.98 1.44 2.24 2.8.04.14.06.28.06.43.03.82-.33 1.72-.93 2.27z"/></svg>');
+  --print-md-admonition-icon--success: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300c853"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>');
+  --print-md-admonition-icon--question: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2364dd17"><path d="M15.07 11.25l-.9.92C13.45 12.89 13 13.5 13 15h-2v-.5c0-1.11.45-2.11 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41a2 2 0 00-2-2 2 2 0 00-2 2H8a4 4 0 014-4 4 4 0 014 4 3.2 3.2 0 01-.93 2.25M13 19h-2v-2h2M12 2A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10c0-5.53-4.5-10-10-10z"/></svg>');
+  --print-md-admonition-icon--warning: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff9100"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z"/></svg>');
+  --print-md-admonition-icon--failure: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff5252"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z"/></svg>');
+  --print-md-admonition-icon--danger: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff1744"><path d="M11.5 20l4.86-9.73H13V4l-5 9.73h3.5V20M12 2c2.75 0 5.1 1 7.05 2.95C21 6.9 22 9.25 22 12s-1 5.1-2.95 7.05C17.1 21 14.75 22 12 22s-5.1-1-7.05-2.95C3 17.1 2 14.75 2 12s1-5.1 2.95-7.05C6.9 3 9.25 2 12 2z"/></svg>');
+  --print-md-admonition-icon--bug: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23f50057"><path d="M14 12h-4v-2h4m0 6h-4v-2h4m6-6h-2.81a5.985 5.985 0 00-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6.002 6.002 0 00-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8z"/></svg>');
+  --print-md-admonition-icon--example: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23651fff"><path d="M7 13v-2h14v2H7m0 6v-2h14v2H7M7 7V5h14v2H7M3 8V5H2V4h2v4H3m-1 9v-1h3v4H2v-1h2v-.5H3v-1h1V17H2m2.25-7a.75.75 0 01.75.75c0 .2-.08.39-.21.52L3.12 13H5v1H2v-.92L4 11H2v-1h2.25z"/></svg>');
+  --print-md-admonition-icon--quote: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%239e9e9e"><path d="M14 17h3l2-4V7h-6v6h3M6 17h3l2-4V7H5v6h3l-2 4z"/></svg>'); }
+
+@media print {
+  .md-typeset .admonition-title {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .admonition-title::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--note); }
+  .md-typeset .note > .admonition-title, .md-typeset .note > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .note > .admonition-title::before, .md-typeset .note > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--note); }
+  .md-typeset .abstract > .admonition-title, .md-typeset .tldr > .admonition-title, .md-typeset .summary > .admonition-title, .md-typeset .abstract > summary, .md-typeset .tldr > summary, .md-typeset .summary > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .abstract > .admonition-title::before, .md-typeset .tldr > .admonition-title::before, .md-typeset .summary > .admonition-title::before, .md-typeset .abstract > summary::before, .md-typeset .tldr > summary::before, .md-typeset .summary > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--abstract); }
+  .md-typeset .info > .admonition-title, .md-typeset .todo > .admonition-title, .md-typeset .info > summary, .md-typeset .todo > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .info > .admonition-title::before, .md-typeset .todo > .admonition-title::before, .md-typeset .info > summary::before, .md-typeset .todo > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--info); }
+  .md-typeset .tip > .admonition-title, .md-typeset .important > .admonition-title, .md-typeset .hint > .admonition-title, .md-typeset .tip > summary, .md-typeset .important > summary, .md-typeset .hint > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .tip > .admonition-title::before, .md-typeset .important > .admonition-title::before, .md-typeset .hint > .admonition-title::before, .md-typeset .tip > summary::before, .md-typeset .important > summary::before, .md-typeset .hint > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--tip); }
+  .md-typeset .success > .admonition-title, .md-typeset .done > .admonition-title, .md-typeset .check > .admonition-title, .md-typeset .success > summary, .md-typeset .done > summary, .md-typeset .check > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .success > .admonition-title::before, .md-typeset .done > .admonition-title::before, .md-typeset .check > .admonition-title::before, .md-typeset .success > summary::before, .md-typeset .done > summary::before, .md-typeset .check > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--success); }
+  .md-typeset .question > .admonition-title, .md-typeset .faq > .admonition-title, .md-typeset .help > .admonition-title, .md-typeset .question > summary, .md-typeset .faq > summary, .md-typeset .help > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .question > .admonition-title::before, .md-typeset .faq > .admonition-title::before, .md-typeset .help > .admonition-title::before, .md-typeset .question > summary::before, .md-typeset .faq > summary::before, .md-typeset .help > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--question); }
+  .md-typeset .warning > .admonition-title, .md-typeset .attention > .admonition-title, .md-typeset .caution > .admonition-title, .md-typeset .warning > summary, .md-typeset .attention > summary, .md-typeset .caution > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .warning > .admonition-title::before, .md-typeset .attention > .admonition-title::before, .md-typeset .caution > .admonition-title::before, .md-typeset .warning > summary::before, .md-typeset .attention > summary::before, .md-typeset .caution > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--warning); }
+  .md-typeset .failure > .admonition-title, .md-typeset .missing > .admonition-title, .md-typeset .fail > .admonition-title, .md-typeset .failure > summary, .md-typeset .missing > summary, .md-typeset .fail > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .failure > .admonition-title::before, .md-typeset .missing > .admonition-title::before, .md-typeset .fail > .admonition-title::before, .md-typeset .failure > summary::before, .md-typeset .missing > summary::before, .md-typeset .fail > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--failure); }
+  .md-typeset .danger > .admonition-title, .md-typeset .error > .admonition-title, .md-typeset .danger > summary, .md-typeset .error > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .danger > .admonition-title::before, .md-typeset .error > .admonition-title::before, .md-typeset .danger > summary::before, .md-typeset .error > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--danger); }
+  .md-typeset .bug > .admonition-title, .md-typeset .bug > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .bug > .admonition-title::before, .md-typeset .bug > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--bug); }
+  .md-typeset .example > .admonition-title, .md-typeset .example > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .example > .admonition-title::before, .md-typeset .example > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--example); }
+  .md-typeset .quote > .admonition-title, .md-typeset .cite > .admonition-title, .md-typeset .quote > summary, .md-typeset .cite > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .quote > .admonition-title::before, .md-typeset .cite > .admonition-title::before, .md-typeset .quote > summary::before, .md-typeset .cite > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--quote); } }
+
+:root {
+  --print-md-footnotes-icon: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23000000de"><path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.42L5.83 13H21V7h-2z"/></svg>'); }
+
+@media print {
+  .md-typeset .footnote-backref::before {
+    background-color: transparent;
+    background-image: var(--print-md-footnotes-icon); } }
+
+:root {
+  --print-md-details-icon: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="hsla(0, 0%, 0%, 0.87)"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>'); }
+
+@media print {
+  .md-typeset summary::after {
+    background-color: transparent;
+    background-image: var(--print-md-details-icon);
+    -webkit-mask-image: none;
+    mask-image: none; } }
+
+:root {
+  --print-md-tasklist-icon: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ddd"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>');
+  --print-md-tasklist-icon--checked: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300e676"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>'); }
+
+@media print {
+  .md-typeset .task-list-control .task-list-indicator::before {
+    background-color: transparent;
+    background-image: var(--print-md-tasklist-icon); }
+  .md-typeset .task-list-control [type=checkbox]:checked + .task-list-indicator::before {
+    background-color: transparent;
+    background-image: var(--print-md-tasklist-icon--checked); } }
+
+/*# sourceMappingURL=material-polyfills.css.map*/
+</style></head><body><article id="doc-cover">
+<p class="course">Curso 2024 / 2025</p>
+<div class="wrapper">
+<h1>Programación Didáctica</h1>
+<h2>Curso</h2>
+</div>
+</article>
+<div class="properties">
+<address>
+<p>---------------------------------------------</p>
+<p id="department">Departamento de informática</p>
+<p id="institution">IES Rafael Alberti, Cádiz</p>
+</address>
+</div>
+<style>
+@page :first {
+    size: A4;
+    margin: 2cm 2cm 11cm 1cm;
+    background-image: url('file:///media/rv3/Almacenamiento/Documentos/0 - Github Repos/Otros/PD Repos/PD Plantilla/mkdocs-pd/docs/templates/assets/portada-ies-rafael-alberti.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+@page {
+    size: A4;
+    margin: 2.54cm; /* Aplica margen de 2.54cm a todo el documento */
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#doc-cover {
+    display: flex;
+    flex-direction: column;
+    height: 16.7cm; /* Altura total de la página */
+    color: white !important;
+    overflow: hidden; /* Previene desbordamiento */
+}
+
+.cover-year {
+    flex: 0 0 2cm;
+    background-color: #E93456  !important;
+    text-align: right;
+    font-size: 11pt;
+    margin: 0cm;
+    color: white !important;
+}
+
+.cover-title {
+    flex: 0 0 18cm; /* Permite que crezca y ocupe el espacio disponible */
+    max-height: 18cm;
+    background-color: #E93456  !important;
+    align-items: flex-start;
+    text-align: left !important;
+    padding: 1cm;
+    margin: 0cm;
+    color: white !important;
+
+    h1 {
+        padding-top: 4cm;
+        font-size: 36pt;
+        border-bottom: none !important; 
+        margin-bottom: 0.4cm; /* Reduce la separación inferior de h1 */
+    }
+    h2 {
+        border-bottom: none !important; 
+        font-size: 16pt;
+        margin-top: 0; /* Elimina el margen superior de h2 */
+    }
+}
+
+.cover-department {
+    text-align: left !important;
+    position: absolute;
+    bottom: -10cm; /* Ajusta la distancia desde el borde inferior */
+    left: 0cm;    
+    background-color: #E93456  !important;
+    color: white !important;
+    max-width: 70%;
+    padding: 1cm;
+    overflow-y: auto; /* Permite scroll si el contenido es muy largo */
+}
+
+/* El resto de tus estilos permanecen igual */
+.cover-title h1 {
+    border-bottom: 1px solid #E93456  !important; }
+
+.cover-title h2 {
+    border-bottom: 1px solid #E93456  !important; }
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('assets/fonts/SourceSans3-Regular.ttf.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('assets/fonts/SourceSans3-Bold.ttf.woff') format('woff');
+    font-weight: bold; /* O ajusta según sea necesario */
+    font-style: italic; /* Cambia a normal si no deseas itálico */
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+p {
+    text-align: justify;
+}
+
+table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+
+  tr {
+    &:nth-child(even) {
+      background-color: #FFE5EA;
+    }
+  }
+
+  th {
+    background-color: #E93456 !important;
+    color: white !important;
+    font-weight: bold !important;
+    padding: 10px !important;
+    text-transform: uppercase;
+  }
+
+  th, td {
+    vertical-align: middle !important;
+    text-align: left !important;
+    padding: 10px !important;
+    height: 100% !important;
+  }
+}/* Añadir reglas que solamente apliquen al documento de la programación didáctica */
+</style><article id="doc-toc"><h1>Índice</h1><ul><li><a href="#PD/:introduccion"><span class="pdf-order">1. </span>Introducción</a><ul><li><a href="#PD/:justificacion-del-curso"><span class="pdf-order">1.1 </span>Justificación del curso</a></li><li><a href="#PD/:situacion-del-curriculo"><span class="pdf-order">1.2 </span>Situación del currículo</a></li><li><a href="#PD/:justificacion-del-curriculo"><span class="pdf-order">1.3 </span>Justificación del currículo</a></li></ul></li><li><a href="#PD/:marco-legal"><span class="pdf-order">2. </span>Marco legal</a><ul><li><a href="#PD/:leyes-organicas"><span class="pdf-order">2.1 </span>Leyes Orgánicas</a></li><li><a href="#PD/:leyes-de-andalucia"><span class="pdf-order">2.2 </span>Leyes de Andalucía</a></li><li><a href="#PD/:calendario-de-implantacion"><span class="pdf-order">2.3 </span>Calendario de implantación</a></li><li><a href="#PD/:requisitos-de-centros"><span class="pdf-order">2.4 </span>Requisitos de centros</a></li><li><a href="#PD/:desarrollo-curricular-de-la-materia"><span class="pdf-order">2.5 </span>Desarrollo curricular de la materia</a></li><li><a href="#PD/:organizacion-y-funcionamiento-de-los-centros"><span class="pdf-order">2.6 </span>Organización y funcionamiento de los centros</a></li><li><a href="#PD/:contextualizacion"><span class="pdf-order">2.7 </span>Contextualización</a></li><li><a href="#PD/:regulacion-y-evaluacion"><span class="pdf-order">2.8 </span>Regulación y evaluación</a></li><li><a href="#PD/:calendario-escolar"><span class="pdf-order">2.9 </span>Calendario escolar</a></li></ul></li><li><a href="#PD/:contexto-del-centro-educativo"><span class="pdf-order">3. </span>Contexto del centro educativo</a><ul><li><a href="#PD/:caracteristicas-del-grupo"><span class="pdf-order">3.1 </span>Características del grupo</a></li></ul></li><li><a href="#PD/:objetivos"><span class="pdf-order">4. </span>Objetivos</a><ul><li><a href="#PD/:objetivos-generales-del-titulo"><span class="pdf-order">4.1 </span>Objetivos generales del título</a></li><li><a href="#PD/:competencias-profesionales-personales-y-sociales"><span class="pdf-order">4.2 </span>Competencias profesionales, personales y sociales</a></li></ul></li><li><a href="#PD/:metodologia"><span class="pdf-order">5. </span>Metodología</a><ul><li><a href="#PD/:principios-metodologicos"><span class="pdf-order">5.1 </span>Principios metodológicos</a></li><li><a href="#PD/:aspectos-organizativos"><span class="pdf-order">5.2 </span>Aspectos organizativos</a></li><li><a href="#PD/:desarrollo-de-las-unidades-didacticas"><span class="pdf-order">5.3 </span>Desarrollo de las unidades didácticas</a></li><li><a href="#PD/:materiales-y-recursos-didacticos"><span class="pdf-order">5.4 </span>Materiales y recursos didácticos</a></li><li><a href="#PD/:actividades-complementarias-y-extraescolares"><span class="pdf-order">5.5 </span>Actividades complementarias y extraescolares</a></li><li><a href="#PD/:fomento-de-la-lectura"><span class="pdf-order">5.6 </span>Fomento de la lectura</a></li></ul></li><li><a href="#PD/:medidas-de-atencion-a-la-diversidad"><span class="pdf-order">6. </span>Medidas de atención a la diversidad</a><ul><li><a href="#PD/:atencion-a-la-diversidad"><span class="pdf-order">6.1 </span>Atención a la diversidad</a></li><li><a href="#PD/:adaptaciones-de-acceso"><span class="pdf-order">6.2 </span>Adaptaciones de acceso</a></li></ul></li><li><a href="#PD/:evaluacion"><span class="pdf-order">7. </span>Evaluación</a><ul><li><a href="#PD/:instrumentos-de-evaluacion"><span class="pdf-order">7.1 </span>Instrumentos de evaluación</a></li><li><a href="#PD/:calificacion"><span class="pdf-order">7.2 </span>Calificación</a></li></ul></li><li><a href="#PD/:evaluacion-y-seguimiento-de-la-programacion"><span class="pdf-order">8. </span>Evaluación y seguimiento de la programación</a><ul><li><a href="#PD/:evaluacion-del-proceso-de-ensenanza"><span class="pdf-order">8.1 </span>Evaluación del proceso de enseñanza</a></li></ul></li><li><a href="#PD/:modulos-profesionales"><span class="pdf-order">9. </span>Módulos profesionales</a></li><li><a href="#PD/:modulo-profesional-titulo-del-modulo-1-codigo-del-modulo-1"><span class="pdf-order">10. </span>Módulo Profesional. Título del módulo 1 (código del módulo 1)</a><ul><li><a href="#PD/:resultados-de-aprendizaje"><span class="pdf-order">10.1 </span>Resultados de aprendizaje</a></li><li><a href="#PD/:contenidos"><span class="pdf-order">10.2 </span>Contenidos</a></li><li><a href="#PD/:evaluacion_1"><span class="pdf-order">10.3 </span>Evaluación</a></li><li><a href="#PD/:bibliografia-y-referencias"><span class="pdf-order">10.4 </span>Bibliografía y referencias</a></li></ul></li><li><a href="#PD/:modulo-profesional-titulo-del-modulo-2-codigo-del-modulo-2"><span class="pdf-order">11. </span>Módulo Profesional. Título del módulo 2 (código del módulo 2)</a><ul><li><a href="#PD/:resultados-de-aprendizaje_1"><span class="pdf-order">11.1 </span>Resultados de aprendizaje</a></li><li><a href="#PD/:contenidos_1"><span class="pdf-order">11.2 </span>Contenidos</a></li><li><a href="#PD/:evaluacion_2"><span class="pdf-order">11.3 </span>Evaluación</a></li><li><a href="#PD/:bibliografia-y-referencias_1"><span class="pdf-order">11.4 </span>Bibliografía y referencias</a></li></ul></li><li><a href="#PD/:registro-de-versiones"><span class="pdf-order">12. </span>Registro de versiones</a></li></ul></article><article class="md-content__inner md-typeset" data-url="/PD/" id="PD/:">
+<h1 id="PD/:introduccion"><span class="pdf-order">1. </span>Introducción</h1>
+<h2 id="PD/:justificacion-del-curso"><span class="pdf-order">1.1 </span>Justificación del curso</h2>
+<h2 id="PD/:situacion-del-curriculo"><span class="pdf-order">1.2 </span>Situación del currículo</h2>
+<p>El título queda identificado por los siguientes elementos:</p>
+<ul>
+<li><strong>Nivel:</strong> Formación Profesional de Grado XXXXX.  </li>
+<li><strong>Duración:</strong> XXXX horas.  </li>
+<li><strong>Familia Profesional:</strong> Informática y Comunicaciones (únicamente a efectos de clasificación de las enseñanzas de formación profesional).  </li>
+<li><strong>Rama de conocimiento:</strong> Ingeniería y Arquitectura.  </li>
+<li><strong>Créditos ECTS:</strong> XX.</li>
+</ul>
+<p>Referente en la Clasificación Internacional Normalizada de la Educación: XXXXXXX.</p>
+<p>La referencia al sistema productivo, de este módulo profesional, se encuentra en el Real Decreto XXX/XXXX, de X de XXXX, por el que se establece el título y se fijan los aspectos básicos del currículo.</p>
+<h2 id="PD/:justificacion-del-curriculo"><span class="pdf-order">1.3 </span>Justificación del currículo</h2>
+<p>El artículo X del Real Decreto XXX/XXXX, de X de XXXX, establece las competencias profesionales, personales y sociales de este curso de especialización.</p>
+<p>“El equipo educativo responsable del desarrollo del curso  elaborará de forma coordinada las programaciones didácticas para los módulos profesionales, teniendo en cuenta la adecuación de los diversos elementos curriculares a las características del entorno social y cultural del centro docente, así como a las del alumnado para alcanzar la adquisición de la competencia general y de las competencias profesionales, personales y sociales del título.”</p>
+<p>Por ello, es el Departamento de la Familia Profesional correspondiente el encargado de elaborar y aprobar dichas programaciones.</p>
+<p>Dicho esto, cabe decir que la programación es un proceso a través del cual se diseña y planifica el trabajo que el profesorado ha de desarrollar con sus alumnos. Este dará como resultado un conjunto de unidades didácticas ordenadas y secuenciadas, teniendo siempre como referente el proyecto curricular del ciclo formativo, así como la realidad laboral del sector informático. Elimina la improvisación, el azar y permite adaptarse al contexto de los alumnos. En definitiva, es una guía de qué y cuándo hay que impartir y cómo calificar a nuestros alumnos.</p>
+<p>El profesorado debe evaluar los aprendizajes de los alumnos, los procesos de enseñanza y su propia práctica docente. Igualmente evaluará el Proyecto Curricular, las programaciones didácticas de los módulos profesionales y el desarrollo real del currículo en relación a las necesidades educativas del Centro, a las características específicas de los alumnos y al entorno socio-económico, cultural y profesional, adaptando esta programación a la realidad social del entorno.</p>
+<p>Por ello, la programación debe estar en continua evolución dependiendo de los resultados del proceso de enseñanza-aprendizaje de los alumnos, no solo del curso para el que se ideó, sino también para los posteriores.</p>
+<h1 id="PD/:marco-legal"><span class="pdf-order">2. </span>Marco legal</h1>
+<h2 id="PD/:leyes-organicas"><span class="pdf-order">2.1 </span>Leyes Orgánicas</h2>
+<p>Ley Orgánica 2/2006, de 3 de mayo (BOE 106 de 4 de mayo), de Educación. <a href="https://www.boe.es/boe/dias/2013/12/10/pdfs/BOE-A-2013-12886.pdf">https://www.boe.es/boe/dias/2013/12/10/pdfs/BOE-A-2013-12886.pdf</a> de 9 de diciembre (BOE 295, de 10 de diciembre) para la Mejora de la Calidad Educativa (LOMCE).</p>
+<p>Ley Orgánica 5/2002, de 19 de junio (BOE 147, de 20 de junio), de las Cualificaciones y de la Formación Profesional.</p>
+<h2 id="PD/:leyes-de-andalucia"><span class="pdf-order">2.2 </span>Leyes de Andalucía</h2>
+<p>Ley 17/2007, de 10 de diciembre (BOJA 252 de 17 de diciembre y BOE 13 de febrero de 2008), de Educación en Andalucía.</p>
+<p>Decreto 436/2008, de 2 septiembre (BOJA 182, de 12 de septiembre), por el que se establecen las enseñanzas de la Formación Profesional inicial.</p>
+<p>Otra normativa relevante.</p>
+<h2 id="PD/:calendario-de-implantacion"><span class="pdf-order">2.3 </span>Calendario de implantación</h2>
+<p>Real Decreto 806/2006, de 30 de junio (BOE 167, de 14 de julio), por el que se establece el calendario de aplicación de la nueva ordenación del sistema educativo establecido por la Ley Orgánica 2/2006, de 3 de mayo, de Educación.</p>
+<h2 id="PD/:requisitos-de-centros"><span class="pdf-order">2.4 </span>Requisitos de centros</h2>
+<p>Real Decreto 132/2010, de 12 de febrero (BOE 62, de 12 de marzo), por el que se establecen los requisitos mínimos de los centros que impartan las enseñanzas del segundo ciclo de la educación infantil, la educación primaria y la educación secundaria.</p>
+<h2 id="PD/:desarrollo-curricular-de-la-materia"><span class="pdf-order">2.5 </span>Desarrollo curricular de la materia</h2>
+<p>Real Decreto XXX/XXXX, de X de XXXXX, por el que se establece el título y se fijan los aspectos básicos del currículo.</p>
+<h2 id="PD/:organizacion-y-funcionamiento-de-los-centros"><span class="pdf-order">2.6 </span>Organización y funcionamiento de los centros</h2>
+<p>Decreto 327/2010, de 13 de julio (BOJA 139, de 16 de julio), por el que se establece el Reglamento Orgánico de los IES.</p>
+<p>Orden de 20 de agosto de 2010 (BOJA 169, 30 de agosto), por la que se regula la organización y el funcionamiento de los institutos de educación secundaria, así como el horario de los centros, del alumnado y del profesorado.</p>
+<h2 id="PD/:contextualizacion"><span class="pdf-order">2.7 </span>Contextualización</h2>
+<p>Real Decreto 1147/2011, de 29 de julio, (BOE 182, de 30 de julio) por el que se establece la ordenación general de la formación profesional del sistema educativo. Deroga el Decreto 1538/2006.</p>
+<h2 id="PD/:regulacion-y-evaluacion"><span class="pdf-order">2.8 </span>Regulación y evaluación</h2>
+<p>Orden de 29 de septiembre de 2010 (BOJA 202, de 15 octubre), por la que se regula la evaluación, certificación, acreditación y titulación académica del alumnado que cursa enseñanzas de formación profesional inicial que forma parte del sistema educativo en la Comunidad Autónoma de Andalucía.</p>
+<p>Orden de 28 de septiembre de 2011 (BOJA 206, de 20 de octubre), por la que se regulan los módulos profesionales de formación en centros de trabajo y de proyecto para el alumnado matriculado en centros docentes de la Comunidad Autónoma de Andalucía. Deroga la Orden de 9 de diciembre de 1998 sobre regulación y la de 31 de julio de 2001 sobre exención de la FCT.</p>
+<p>Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas. En lo referente a la utilización de tecnologías telemáticas y audiovisuales para el proceso de seguimiento y evaluación.</p>
+<h2 id="PD/:calendario-escolar"><span class="pdf-order">2.9 </span>Calendario escolar</h2>
+<p>Decreto 301/2009, de 14 de julio, (BOJA 139, de 20 de julio de 2009) por el que se regula el calendario y la jornada escolar en los centros, a excepción de los universitarios.</p>
+<h1 id="PD/:contexto-del-centro-educativo"><span class="pdf-order">3. </span>Contexto del centro educativo</h1>
+<p>El I.E.S. Rafael Alberti está ubicado en Cádiz, con una población que gira alrededor de 122.990 habitantes. Su economía está basada principalmente en el sector del comercio, debido a la presencia de los astilleros y las actividades en la zona portuaria y la Zona Franca. Otro sector clave es el turismo, gracias a su importante patrimonio histórico, así como sus playas, fiestas locales y gastronomía.</p>
+<p>El centro oferta estudios de ESO, Bachillerato, CFGM de Gestión Administrativa, CFGS de Técnico Superior en Administración y Finanzas, CFGB de Informática de Oficina, CFGBE de Informática de Oficina, CFGM de Sistemas Microinformáticos y Redes, CFGS de Desarrollo de Aplicaciones Web, CFGS de Desarrollo de Aplicaciones Multiplataforma, y los cursos de especialización en Ciberseguridad en entornos de las tecnologías de la información, Desarrollo de Videojuegos y Realidad Virtual, e Inteligencia Artificial y Big Data.</p>
+<h2 id="PD/:caracteristicas-del-grupo"><span class="pdf-order">3.1 </span>Características del grupo</h2>
+<h1 id="PD/:objetivos"><span class="pdf-order">4. </span>Objetivos</h1>
+<h2 id="PD/:objetivos-generales-del-titulo"><span class="pdf-order">4.1 </span>Objetivos generales del título</h2>
+<p>El Real Decreto XXX/XXXX, de X de XXXX, fija los objetivos generales de este curso.</p>
+<p>a) Objetivo 1.</p>
+<p>b) Objetivo 2.</p>
+<h2 id="PD/:competencias-profesionales-personales-y-sociales"><span class="pdf-order">4.2 </span>Competencias profesionales, personales y sociales</h2>
+<p>Las competencias profesionales, personales y sociales de este título son las que se relacionan a continuación:</p>
+<p>a) Competencia 1.</p>
+<p>b) Competencia 2.</p>
+<h1 id="PD/:metodologia"><span class="pdf-order">5. </span>Metodología</h1>
+<h2 id="PD/:principios-metodologicos"><span class="pdf-order">5.1 </span>Principios metodológicos</h2>
+<p>La metodología a emplear tomará como eje el diálogo, el debate y la confrontación de ideas e hipótesis, ya que no podemos olvidar que el aprendizaje es un proceso social y personal que cada individuo construye al relacionarse, activamente, con las personas y la cultura en las que vive. Como orientaciones metodológicas se utilizarán las siguientes:</p>
+<ul>
+<li>Partir del nivel de desarrollo del alumno/a y los conocimientos previos que posee.  </li>
+<li>Favorecer la adquisición de aprendizajes significativos y funcionales, trasladables a las situaciones de trabajo relacionadas con su Ciclo Formativo. De este modo, se crean relaciones entre los nuevos contenidos y lo que ya se sabe.  </li>
+<li>Contribuir al desarrollo de la capacidad de “aprender a aprender”, permitiendo que el alumno/a se adapte a nuevas situaciones de aprendizaje.  </li>
+<li>Crear un clima de aceptación mutua y cooperación.</li>
+</ul>
+<p>En definitiva, la metodología a utilizar será activa, participativa, creativa y reflexiva; para que el alumno/a sea protagonista de su propio aprendizaje. Además, será importante hacer ver al alumnado la funcionalidad de los contenidos, de manera que puedan utilizarlos en situaciones reales de la vida cotidiana en relación con sus intereses y motivaciones. Es por ello que en la medida de lo posible intentaremos no hacer clases magistrales salvo en casos excepcionales en los que los contenidos a explicar requieran una mayor utilización de estas.</p>
+<p>Basándonos en un aprendizaje significativo, en las unidades didácticas se ha utilizado la metodología de Tyler y Wheeler, que distingue entre varios tipos de actividades. En concreto, se utilizan los siguientes tipos de actividades:</p>
+<ul>
+<li>Actividades de evaluación de conocimientos previos.  </li>
+<li>Actividades de presentación – motivación.  </li>
+<li>Actividades de desarrollo de contenidos o explicación.  </li>
+<li>Actividades de refuerzo y ampliación.  </li>
+<li>Actividades de evaluación.  </li>
+<li>Actividades de recuperación.</li>
+</ul>
+<h2 id="PD/:aspectos-organizativos"><span class="pdf-order">5.2 </span>Aspectos organizativos</h2>
+<h3 id="PD/:trabajo-en-equipo-y-colaboracion"><span class="pdf-order">5.2.1 </span>Trabajo en equipo y colaboración</h3>
+<p>Tal y como se establece en los Objetivos de la formación Profesional, ser capaces de realizar trabajo en equipo es uno de los objetivos. Es por ello necesario para el proceso de enseñanza-aprendizaje, y conviene señalar el tipo de agrupamiento de los alumnos mediante el cual se desarrollarán dichas actividades.</p>
+<p>Los diferentes bloques de la materia permiten que se pueda trabajar tanto individualmente (resolución de actividades) como en pequeños grupos (discusión y resolución de casos prácticos) y en gran grupo.</p>
+<p>Individualmente, como actividad de aprendizaje propia de cada alumno/a, favorecemos la capacidad intelectual de aprender por sí mismo.</p>
+<ul>
+<li>Realiza actividades y tareas programadas.  </li>
+<li>Crea sus propias pautas o ritmos de aprendizaje.  </li>
+<li>Organiza sus tiempos. Es puntual en la entrega de trabajos.  </li>
+<li>Es autocrítico y tiene autoestima. Tiene iniciativa ante problemas que se le plantean.  </li>
+<li>Es perseverante y responsable.  </li>
+<li>Cuida los recursos que utiliza (instalaciones, equipos, bibliografía, etc.), evita riesgos medioambientales. Aplica las normas de seguridad e higiene en el trabajo.</li>
+</ul>
+<p>El trabajo individual nos permitirá, por tanto, desarrollar las competencias personales y profesionales programadas.</p>
+<p>En grupo, “el conocimiento que se comparte, se multiplica”. Se procurará que el alumnado logre entre sí, un buen clima de cooperación y trabajo en equipo. El desarrollo de estas actitudes en la Formación Profesional es básico para que el alumno/a en el futuro se integre fácilmente en su puesto de trabajo y pueda participar en un equipo profesional. Los trabajos en grupo nos permiten desarrollar las competencias personales y sociales del alumnado.</p>
+<p>Usaremos el agrupamiento de pequeño grupo, entre 2 y 4 componentes, y en menor medida el trabajo individualizado, tanto para los trabajos de clase, autodidacta como en casa. Esto mismo es aplicable a la realización de las prácticas obligatorias, y también cuando la actividad a desempeñar sea la de dudas, cierre o repaso.</p>
+<h2 id="PD/:desarrollo-de-las-unidades-didacticas"><span class="pdf-order">5.3 </span>Desarrollo de las unidades didácticas</h2>
+<p>El proceso que se seguirá es el siguiente:</p>
+<ul>
+<li>Presentación de la unidad, indicando los Resultados de Aprendizaje y Criterios de Evaluación asociados a la unidad.  </li>
+<li>Cada sesión comenzará con un breve resumen de los contenidos vistos en la sesión anterior, resolviendo cualquier tipo de duda que haya surgido.  </li>
+<li>A continuación se explicarán los nuevos contenidos con ayuda de diapositivas, resolución de ejercicio práctico o algún material de apoyo, como vídeos, imágenes, audios, enlaces a otros contenidos, etc.  </li>
+<li>Puesta en práctica de aquellos contenidos en actividades que se podrá comenzar en clase y seguir practicando en casa.  </li>
+<li>Al finalizar la unidad se realizarán actividades de refuerzo y ampliación para resolución de las dudas que aún les puedan surgir o ampliar los conocimientos, de forma que atendamos a la atención a la diversidad y en concreto a los diferentes ritmos de aprendizaje.</li>
+</ul>
+<h2 id="PD/:materiales-y-recursos-didacticos"><span class="pdf-order">5.4 </span>Materiales y recursos didácticos</h2>
+<p>Se utilizarán los siguientes recursos:</p>
+<ul>
+<li>Para el desarrollo de los contenidos conceptuales se emplearán textos, ejemplos y apuntes en formato digital.  </li>
+<li>Para el desarrollo de los contenidos prácticos se utilizarán los ordenadores del aula-grupo.</li>
+</ul>
+<p>En cuanto al espacio utilizado para el desarrollo de esta programación, será el aula del grupo usando los ordenadores disponibles. Será necesario el uso de Internet como complemento a las actividades.</p>
+<ul>
+<li><strong>Hardware:</strong> </li>
+<li>Televisión.  </li>
+<li>Ordenadores.  </li>
+<li>Red de área local.  </li>
+<li><strong>Software:</strong> </li>
+<li>Sistema operativo.  </li>
+<li>Navegador.  </li>
+<li>Software de virtualización.</li>
+</ul>
+<p>Se usará la plataforma educativa online Moodle Centros que proporciona la Consejería de Educación de la Junta de Andalucía, como lugar de consulta y presentación de trabajos, así como medio principal de comunicación con el alumnado.</p>
+<h2 id="PD/:actividades-complementarias-y-extraescolares"><span class="pdf-order">5.5 </span>Actividades complementarias y extraescolares</h2>
+<p>Las visitas programadas por el departamento se recogen en el plan anual del centro, y las actividades que se han programado para el presente curso lectivo se han incluido en dicho documento.</p>
+<h2 id="PD/:fomento-de-la-lectura"><span class="pdf-order">5.6 </span>Fomento de la lectura</h2>
+<p>Dada la particular naturaleza de las enseñanzas relacionadas con la informática, es frecuente que los profesionales de la informática deban leer documentación técnica en inglés, ya que o la documentación en castellano está anticuada o bien las traducciones son deficientes, y los detalles técnicos traducidos resultan con frecuencia incomprensibles, incompletos o erróneos.</p>
+<p>Por tanto, es necesario que el alumno que cursa estudios de informática se acostumbre a utilizar documentación técnica en inglés, en primer lugar para "perder el miedo" a consultar documentación en inglés u otra lengua y en segundo lugar porque es frecuente que no haya otra alternativa si se quiere tener información actualizada.<br/>
+El alumno debe evitar utilizar permanentemente traductores automáticos, no solo porque las traducciones de textos técnicos la mayoría de las veces no son comprensibles, sino porque también se pierde demasiado tiempo si cada vez que se necesite comprender algo escrito en otro idioma haya que copiar el texto al software traductor, el cual frecuentemente origina problemas relacionados con el formato del texto copiado (viñetas, etc.) que dificultan la comprensión del texto traducido. Sin contar que es posible que lo que sea necesario traducir sea un texto impreso en papel, o una conversación hablada.</p>
+<h1 id="PD/:medidas-de-atencion-a-la-diversidad"><span class="pdf-order">6. </span>Medidas de atención a la diversidad</h1>
+<p>Es un hecho indiscutible que los alumnos y alumnas son diferentes por su cultura, intereses, estilos de aprendizaje, motivaciones y tiempo que necesitan para aprender y esta necesidad, requiere diferentes grados de atención educativa.</p>
+<p>El art 5.3 del Real Decreto 1147/2011, indica que las enseñanzas de formación profesional se adaptarán al alumnado con necesidad específica de apoyo educativo para que se garantice su acceso, permanencia y progresión.</p>
+<p>En la Formación Profesional Inicial no se contemplan adaptaciones curriculares significativas, es por ello que, solo se podrán contemplar medidas no significativas de acceso al currículo. Por este motivo, la forma de atender a la diversidad desde este módulo será sobre todo metodológica.</p>
+<p>Los ajustes deben ser flexibles para atender a las dificultades, con la metodología, actividades, materiales y agrupamientos que no entorpezcan al resto del alumnado. Estas pueden ser:</p>
+<ul>
+<li>Adaptaciones de acceso, no solo movilidad sino también acceso a la información. Que pueden afectar a la metodología, recursos y métodos de evaluación, pero jamás a los contenidos, ya que la Ley lo impide.  </li>
+<li>Adaptaciones metodológicas que no afectarán a los componentes del currículo.</li>
+</ul>
+<p>El Departamento didáctico solicitará asesoramiento al Departamento de Orientación del Centro respecto al alumnado que soliciten apoyo, para en caso de no tener apoyo externo intentar asesorar a las familias y/o alumnado solicitante, con el objeto de facilitar alcanzar los objetivos fijados por el diseño curricular.</p>
+<h2 id="PD/:atencion-a-la-diversidad"><span class="pdf-order">6.1 </span>Atención a la diversidad</h2>
+<p>Se realizará un seguimiento individual del alumnado con el objeto de adecuar el proceso de enseñanza-aprendizaje a las características del mismo. Se pueden emplear los siguientes métodos:</p>
+<ul>
+<li>Planteamiento de actividades y cuestionarios para fijar el nivel de conocimientos previos.  </li>
+<li>Observación de la actitud diaria del alumnado.  </li>
+<li>Evaluación de la capacidad del educando para realizar procedimientos técnicos con el equipo y su habilidad para la resolución de los problemas.  </li>
+<li>Elaboración de trabajos que hagan uso de la capacidad creativa y de los medios y recursos del Centro.  </li>
+<li>Integración de los alumnos y alumnas con problemas en grupos de trabajo mixtos y diversos para que en ningún momento se sientan discriminados.</li>
+</ul>
+<h2 id="PD/:adaptaciones-de-acceso"><span class="pdf-order">6.2 </span>Adaptaciones de acceso</h2>
+<p>Adaptaciones de acceso al currículo, condiciones físicas del Centro y del aula y recursos materiales, dentro de las condiciones y medidas previstas por el Centro.</p>
+<p>Medidas metodológicas, curriculares y organizativas, que básicamente serán:</p>
+<ul>
+<li>
+<p>Modificación de la organización espacial: para que puedan sacar más partido de lo que se vea o se oiga en clase y garantizando su comodidad y movilidad.</p>
+</li>
+<li>
+<p>Priorización y secuenciación de contenidos (resaltando los procedimientos), con posibilidad de eliminar contenidos secundarios.</p>
+</li>
+<li>
+<p>En los agrupamientos: fomentando la integración y la ayuda entre compañeros.</p>
+</li>
+<li>
+<p>Adaptando los tiempos y ritmos de aprendizaje, a cada alumno/a.</p>
+</li>
+<li>
+<p>Variedad de recursos didácticos en función de las necesidades, uso de técnicas de estudio (con el Dpto. de Orientación) y alterando el nivel de abstracción o complejidad.</p>
+</li>
+<li>
+<p>Actividades alternativas y/o complementarias que respondan progresivamente a los diferentes ritmos de aprendizaje del alumnado del grupo:</p>
+</li>
+<li>
+<p>Las <em>actividades de refuerzo</em> se orientan a la superación de posibles dificultades de alumnos que no han alcanzado los objetivos, a través de la repetición de explicaciones y la búsqueda de ejemplos y casos prácticos.</p>
+</li>
+<li>
+<p>Las <em>actividades de ampliación</em>, se orientan a que el alumno/a que haya adquirido perfectamente los contenidos del tema, desarrolle al máximo los resultados de aprendizaje, usando todos los recursos disponibles. Consistirán en la investigación, de entre varios temas propuestos por el profesor, en la búsqueda de información y realización de trabajos.</p>
+</li>
+<li>
+<p>Empleo de variedad de técnicas e instrumentos de evaluación de los aprendizajes.</p>
+</li>
+</ul>
+<h1 id="PD/:evaluacion"><span class="pdf-order">7. </span>Evaluación</h1>
+<p>El art. 3.3 de la ORDEN de 29 de septiembre de 2010 establece que al término del proceso de enseñanza-aprendizaje, el alumnado obtendrá una calificación final para cada uno de los módulos profesionales en que esté matriculado y que para establecer dicha calificación los miembros del equipo docente considerarán el grado y nivel de adquisición de los resultados de aprendizaje establecidos para cada módulo profesional, de acuerdo con sus correspondientes criterios de evaluación.</p>
+<p>En base al artículo anterior, en el apartado 9 de esta programación, se especifican los resultados de aprendizaje asociados a cada uno de los módulos profesionales.</p>
+<h2 id="PD/:instrumentos-de-evaluacion"><span class="pdf-order">7.1 </span>Instrumentos de evaluación</h2>
+<p>Se utilizarán los siguientes instrumentos de evaluación para comprobar el progreso y las dificultades del alumnado:</p>
+<ul>
+<li>Actividades teórico-prácticas sobre los contenidos tratados en el aula.  </li>
+<li>Proyectos aplicados.  </li>
+<li>Pruebas de aplicación teóricas y prácticas.</li>
+</ul>
+<h2 id="PD/:calificacion"><span class="pdf-order">7.2 </span>Calificación</h2>
+<p>Según establece el artículo 3, punto 3 de la ORDEN de 29 de septiembre de 2010, por la que se regula la evaluación, certificación, acreditación y titulación académica del alumnado que cursa enseñanzas de formación profesional inicial que forma parte del sistema educativo en la Comunidad Autónoma de Andalucía:</p>
+<blockquote>
+<p>“<em>Al término del proceso de enseñanza-aprendizaje, el alumnado obtendrá una calificación final para cada uno de los módulos profesionales en que esté matriculado. Para establecer dicha calificación los miembros del equipo docente considerarán el grado y nivel de adquisición de los resultados de aprendizaje establecidos para cada módulo profesional, de acuerdo con sus correspondientes criterios de evaluación y los objetivos generales relacionados, así como de la competencia general y las competencias profesionales, personales y sociales del título, establecidas en el perfil profesional del mismo y sus posibilidades de inserción en el sector profesional y de progreso en los estudios posteriores a los que pueda acceder.</em>”</p>
+</blockquote>
+<h3 id="PD/:evaluacion-inicial"><span class="pdf-order">7.2.1 </span>Evaluación inicial</h3>
+<p>Durante el primer mes del curso, se realizará una evaluación inicial sobre los contenidos del módulo profesional con la finalidad de detectar posibles problemas que podamos tener durante el curso y adaptar los contenidos al nivel del alumnado. </p>
+<p>Los resultados serán obtenidos a través de una prueba inicial en los primeros días de clase y observación directa del alumnado desde el inicio del curso hasta la evaluación.</p>
+<p>Esta evaluación no afectará a la calificación final, solo tendrá carácter informativo.</p>
+<h3 id="PD/:evaluaciones-parciales"><span class="pdf-order">7.2.2 </span>Evaluaciones parciales</h3>
+<p>A lo largo del curso tendremos dos momentos en los que se evaluará al alumnado de manera parcial: una en enero y otra en mayo.</p>
+<p>Para calcular la <strong>calificación de cada evaluación parcial</strong>, y dado que según la normativa vigente debe ser un número entero comprendido entre el 1 y el 10, se procederá de la siguiente manera:</p>
+<p>La calificación de cada evaluación parcial será la media aritmética de las calificaciones obtenidas en todos los Resultados de Aprendizaje evaluados hasta el momento. A su vez, la calificación de cada Resultado de Aprendizaje se obtendrá mediante la media aritmética de las calificaciones de los Criterios de Evaluación que lo componen.</p>
+<p>Esta calificación solo será efectiva en el caso de que el alumno haya superado todos y cada uno de los Resultados de Aprendizaje impartidos en la evaluación. En el caso de que el alumno no haya superado algún Resultado de Aprendizaje y el resultado de la anterior fórmula sea un número entero mayor o igual que 5, la calificación efectiva de la evaluación será igual a 4 hasta que el alumno supere todos los Resultados de Aprendizaje pendientes, momento en el que se realizará el recálculo de las calificaciones tal y como se indica en el apartado <strong>Evaluación Ordinaria</strong>.</p>
+<h3 id="PD/:evaluacion-final-ordinaria"><span class="pdf-order">7.2.3 </span>Evaluación final ordinaria</h3>
+<p>La calificación de la evaluación final se expresa en la escala de 1 a 10 sin decimales considerándose superado el módulo a las alumnas o alumnos que obtengan una puntuación igual o superior a 5.</p>
+<p>Para la evaluación final, la calificación será la media aritmética de todos los Resultados de Aprendizaje evaluados a lo largo del curso. La superación de un trimestre no implica la superación de los anteriores. Si el alumnado supera el segundo trimestre, pero no el primero, se considerará el curso no superado.</p>
+<h3 id="PD/:periodo-de-refuerzo-yo-recuperacion"><span class="pdf-order">7.2.4 </span>Periodo de refuerzo y/o recuperación</h3>
+<p>Al finalizar el periodo ordinario podemos encontrarnos con alumnos o alumnas que no hayan superado el módulo, por lo que contaremos con un amplio plazo para intentar dotar a los estudiantes de los Resultados de Aprendizajes del módulo para obtener una calificación positiva en la evaluación final. En este periodo se ha considerado oportuno llevar a cabo las siguientes acciones:</p>
+<ul>
+<li>Se analizarán a modo de síntesis los conceptos fundamentales.  </li>
+<li>Los alumnos y alumnas resolverán supuestos prácticos.  </li>
+<li>Posteriormente se celebrará una prueba de evaluación.</li>
+</ul>
+<p>Igualmente, podemos encontrarnos con la situación de alumnos o alumnas que han superado las dos evaluaciones parciales, no estén satisfechos con su calificación y soliciten una oportunidad de intentar mejorarlas. El docente, tal como establece la normativa, atenderá a dicha demanda y planificará actividades para tal fin:</p>
+<ul>
+<li>Se efectuarán aportaciones de situaciones más complejas de los supuestos prácticos.  </li>
+<li>Posteriormente, se presentarán a una prueba de evaluación.</li>
+</ul>
+<h3 id="PD/:reclamacion-del-alumnado"><span class="pdf-order">7.2.5 </span>Reclamación del alumnado</h3>
+<p>El alumnado tiene derecho a formular reclamaciones sobre las decisiones y calificaciones del proceso de evaluación. Así lo establece el artículo 19 de la Orden de 29 de septiembre de 2010, que concede un plazo de 2 días hábiles posteriores a la publicación o notificación de las notas para hacerla efectiva y encarga al departamento correspondiente resolver, emitiendo un informe al efecto.</p>
+<h1 id="PD/:evaluacion-y-seguimiento-de-la-programacion"><span class="pdf-order">8. </span>Evaluación y seguimiento de la programación</h1>
+<h2 id="PD/:evaluacion-del-proceso-de-ensenanza"><span class="pdf-order">8.1 </span>Evaluación del proceso de enseñanza</h2>
+<p>En este caso se pretende valorar la idoneidad de la programación didáctica y el entorno donde se pone en práctica, comparando los resultados alcanzados con los objetivos que se pretendían conseguir.</p>
+<p>También es conveniente la evaluación del profesorado como parte del proceso de enseñanza. Esto permite garantizar la calidad del mismo, pues la propia revisión del trabajo realizado por el docente, es el mejor camino para detectar los puntos débiles del proceso de enseñanza-aprendizaje, siempre para tomar las medidas oportunas que permitan reforzar esos puntos débiles con el fin de mejorar la calidad de la enseñanza impartida.</p>
+<p>La autoevaluación posibilita:</p>
+<ul>
+<li>Tener una técnica apropiada de percepción de la actuación docente.  </li>
+<li>Una ayuda para reflexionar sobre éxitos y fracasos. Para modificar la forma de enseñar y evaluar.  </li>
+<li>Un método que facilita el crecimiento y desarrollo profesional.  </li>
+<li>Una herramienta que permite identificar las necesidades de formación del docente.  </li>
+<li>Un instrumento para la evaluación del docente, por y para él.</li>
+</ul>
+<p>La evaluación del proceso de enseñanza no debe ser considerada por el profesorado como un método de inspección que detecte la competencia o no. Debe entenderse como una práctica de auto sensibilización en los valores más adecuados para la enseñanza:</p>
+<ul>
+<li>Colaboración frente a individualismo.  </li>
+<li>Autonomía frente a dependencia.  </li>
+<li>Comunicación frente al aislamiento.  </li>
+<li>Autorregulación y crítica colaborativa frente a directrices externas.</li>
+</ul>
+<p>Hemos de considerar la autoevaluación como un componente esencial dentro del proceso general de la evaluación académica. Esta se llevará a cabo fundamentalmente por la realimentación proporcionada por el propio alumnado, en forma de resultados de las prácticas, exámenes, proyectos, trabajos de investigación, etc. También por las opiniones que podamos recibir de otros compañeros del Departamento y del Equipo Directivo.</p>
+<p>Además, está previsto realizar un cuestionario que se pasará a todos los alumnos y alumnas al final del curso, para conocer la impresión que han tenido y aspectos que mejorarían o cambiarían.</p>
+<h1 id="PD/:modulos-profesionales"><span class="pdf-order">9. </span>Módulos profesionales</h1>
+<p>Los módulos profesionales de este curso de especialización quedan desarrollados en el anexo I de este real decreto, cumpliendo lo previsto en el artículo 10, apartado 3 del Real Decreto 1147/2011, de 29 de julio, por el que se establece la ordenación general de la formación profesional del sistema educativo. Son los que a continuación se relacionan:</p>
+<ul>
+<li>Código del módulo 1. Título del módulo 1.</li>
+<li>Código del módulo 2. Título del módulo 2.</li>
+</ul>
+<h1 id="PD/:modulo-profesional-titulo-del-modulo-1-codigo-del-modulo-1"><span class="pdf-order">10. </span>Módulo Profesional. Título del módulo 1 (código del módulo 1)</h1>
+<h2 id="PD/:resultados-de-aprendizaje"><span class="pdf-order">10.1 </span>Resultados de aprendizaje</h2>
+<p>El Real Decreto XXX/XXXX, de X de XXXXXX, establece los siguientes Resultados de aprendizaje, que se presentan desglosados según sus elementos:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">RA</th>
+<th style="text-align: left;">LOGRO</th>
+<th style="text-align: left;">OBJETO</th>
+<th style="text-align: left;">ACCIONES EN EL CONTEXTO DE APRENDIZAJE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">RA 1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 3</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="PD/:contenidos"><span class="pdf-order">10.2 </span>Contenidos</h2>
+<h3 id="PD/:contenidos-del-curriculo"><span class="pdf-order">10.2.1 </span>Contenidos del currículo</h3>
+<p>Los contenidos son el conjunto de conocimientos, habilidades, destrezas y actitudes cuya asimilación y apropiación por los que aprenden se consideran esenciales para su ejercicio profesional.</p>
+<p>La concreción de los mismos y su secuenciación de aprendizaje se han realizado atendiendo a los siguientes criterios:</p>
+<ul>
+<li>Adecuación a los contenidos básicos reflejados en la normativa estatal, el Real Decreto XXX/XXXX, de X de XXXXXX.  </li>
+<li>Adecuación de los contenidos al requerido en el entorno laboral local.  </li>
+<li>Adaptación de los contenidos a los conocimientos previos del alumnado.  </li>
+<li>Continuidad y progresión en los contenidos.  </li>
+<li>Equilibrio entre las secuencias de conceptos, objetivos y capacidades.  </li>
+<li>Interrelación entre contenidos.</li>
+</ul>
+<h3 id="PD/:seleccion-y-secuencia-de-contenidos"><span class="pdf-order">10.2.2 </span>Selección y secuencia de contenidos</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Unidades didácticas</th>
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Sesiones</th>
+<th style="text-align: center;">RA</th>
+<th style="text-align: center;">Criterios</th>
+<th>Trimestre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">UD1</td>
+<td style="text-align: left;">Título de la unidad</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">RA1</td>
+<td style="text-align: center;">a)..e)</td>
+<td>1º</td>
+</tr>
+</tbody>
+</table>
+<h3 id="PD/:tratamiento-de-temas-transversales"><span class="pdf-order">10.2.3 </span>Tratamiento de temas transversales</h3>
+<p>Los temas transversales -no específicos de la materia- y su tratamiento, están vinculados a las situaciones que se presenten en las actividades propuestas, distribuidos a lo largo del módulo.</p>
+<ul>
+<li>Se considerarán los siguientes temas transversales:  </li>
+<li>Sostenibilidad medioambiental.  </li>
+<li>Educación del consumidor.  </li>
+<li>Salud laboral.  </li>
+<li>Educación para la igualdad de oportunidades entre ambos sexos.  </li>
+<li>Igualdad de oportunidades y respeto a personas de otras culturas y credos.  </li>
+<li>Inserción laboral.  </li>
+<li>Creación de empleo.  </li>
+<li>Educación para la paz y la convivencia.  </li>
+<li>Educación para la ciudadanía.  </li>
+<li>Manejo de documentación técnica.</li>
+</ul>
+<h3 id="PD/:interdisciplinaridad"><span class="pdf-order">10.2.4 </span>Interdisciplinaridad</h3>
+<h2 id="PD/:evaluacion_1"><span class="pdf-order">10.3 </span>Evaluación</h2>
+<h2 id="PD/:bibliografia-y-referencias"><span class="pdf-order">10.4 </span>Bibliografía y referencias</h2>
+<h3 id="PD/:bibliografia-de-departamento"><span class="pdf-order">10.4.1 </span>Bibliografía de departamento</h3>
+<ul>
+<li>Título del libro, Autor/a. Editorial.</li>
+</ul>
+<h3 id="PD/:bibliografia-de-aula"><span class="pdf-order">10.4.2 </span>Bibliografía de aula</h3>
+<h3 id="PD/:referencias-web"><span class="pdf-order">10.4.3 </span>Referencias web</h3>
+<p>Todas las referencias usadas, se encuentran disponibles en la extensión virtual del aula que proporciona la plataforma Moodle del Centro, destacando:</p>
+<h1 id="PD/:modulo-profesional-titulo-del-modulo-2-codigo-del-modulo-2"><span class="pdf-order">11. </span>Módulo Profesional. Título del módulo 2 (código del módulo 2)</h1>
+<h2 id="PD/:resultados-de-aprendizaje_1"><span class="pdf-order">11.1 </span>Resultados de aprendizaje</h2>
+<p>El Real Decreto XXX/XXXX, de X de XXXXXX, establece los siguientes Resultados de aprendizaje, que se presentan desglosados según sus elementos:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">RA</th>
+<th style="text-align: left;">LOGRO</th>
+<th style="text-align: left;">OBJETO</th>
+<th style="text-align: left;">ACCIONES EN EL CONTEXTO DE APRENDIZAJE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">RA 1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 3</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="PD/:contenidos_1"><span class="pdf-order">11.2 </span>Contenidos</h2>
+<h3 id="PD/:contenidos-del-curriculo_1"><span class="pdf-order">11.2.1 </span>Contenidos del currículo</h3>
+<p>Los contenidos son el conjunto de conocimientos, habilidades, destrezas y actitudes cuya asimilación y apropiación por los que aprenden se consideran esenciales para su ejercicio profesional.</p>
+<p>La concreción de los mismos y su secuenciación de aprendizaje se han realizado atendiendo a los siguientes criterios:</p>
+<ul>
+<li>Adecuación a los contenidos básicos reflejados en la normativa estatal, el Real Decreto XXX/XXXX, de X de XXXXXX.  </li>
+<li>Adecuación de los contenidos al requerido en el entorno laboral local.  </li>
+<li>Adaptación de los contenidos a los conocimientos previos del alumnado.  </li>
+<li>Continuidad y progresión en los contenidos.  </li>
+<li>Equilibrio entre las secuencias de conceptos, objetivos y capacidades.  </li>
+<li>Interrelación entre contenidos.</li>
+</ul>
+<h3 id="PD/:seleccion-y-secuencia-de-contenidos_1"><span class="pdf-order">11.2.2 </span>Selección y secuencia de contenidos</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Unidades didácticas</th>
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Sesiones</th>
+<th style="text-align: center;">RA</th>
+<th style="text-align: center;">Criterios</th>
+<th>Trimestre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">UD1</td>
+<td style="text-align: left;">Título de la unidad</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">RA1</td>
+<td style="text-align: center;">a)..e)</td>
+<td>1º</td>
+</tr>
+</tbody>
+</table>
+<h3 id="PD/:tratamiento-de-temas-transversales_1"><span class="pdf-order">11.2.3 </span>Tratamiento de temas transversales</h3>
+<p>Los temas transversales -no específicos de la materia- y su tratamiento, están vinculados a las situaciones que se presenten en las actividades propuestas, distribuidos a lo largo del módulo.</p>
+<ul>
+<li>Se considerarán los siguientes temas transversales:  </li>
+<li>Sostenibilidad medioambiental.  </li>
+<li>Educación del consumidor.  </li>
+<li>Salud laboral.  </li>
+<li>Educación para la igualdad de oportunidades entre ambos sexos.  </li>
+<li>Igualdad de oportunidades y respeto a personas de otras culturas y credos.  </li>
+<li>Inserción laboral.  </li>
+<li>Creación de empleo.  </li>
+<li>Educación para la paz y la convivencia.  </li>
+<li>Educación para la ciudadanía.  </li>
+<li>Manejo de documentación técnica.</li>
+</ul>
+<h3 id="PD/:interdisciplinaridad_1"><span class="pdf-order">11.2.4 </span>Interdisciplinaridad</h3>
+<h2 id="PD/:evaluacion_2"><span class="pdf-order">11.3 </span>Evaluación</h2>
+<h2 id="PD/:bibliografia-y-referencias_1"><span class="pdf-order">11.4 </span>Bibliografía y referencias</h2>
+<h3 id="PD/:bibliografia-de-departamento_1"><span class="pdf-order">11.4.1 </span>Bibliografía de departamento</h3>
+<ul>
+<li>Título del libro, Autor/a. Editorial.</li>
+</ul>
+<h3 id="PD/:bibliografia-de-aula_1"><span class="pdf-order">11.4.2 </span>Bibliografía de aula</h3>
+<h3 id="PD/:referencias-web_1"><span class="pdf-order">11.4.3 </span>Referencias web</h3>
+<p>Todas las referencias usadas, se encuentran disponibles en la extensión virtual del aula que proporciona la plataforma Moodle del Centro, destacando:</p>
+<h1 id="PD/:registro-de-versiones"><span class="pdf-order">12. </span>Registro de versiones</h1>
+<table>
+<thead>
+<tr>
+<th>Responsable</th>
+<th>Acción (Redactado, Revisado)</th>
+<th>Fecha</th>
+<th>Versión</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apellidos, Nombre<br/> Apellidos, nombre</td>
+<td>Redactado</td>
+<td>Fecha</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Apellidos, Nombre<br/> Apellidos, nombre</td>
+<td>Revisado</td>
+<td>Fecha</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</article></body></html>
