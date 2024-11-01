@@ -9,20 +9,21 @@
     margin: 0; /* Sin margen en la primera página */
 }
 
+/* Estilo específico para la portada */
 .wrapper {
     display: flex;
-    flex-direction: column; /* Disposición en columna de los bloques */
+    flex-direction: column; /* Estructura en columna para los elementos internos */
     justify-content: space-between;
     align-items: stretch;
     padding: 2cm;
-    background-image: url('{{ cover_logo | to_url }}'); /* Imagen de fondo */
+    background-image: url('{{ cover_logo | to_url }}'); /* Imagen de fondo para la portada */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: white;
-    width: 21cm; /* Anchura de A4 */
-    height: 29.7cm; /* Altura de A4 */
+    color: white !important; /* Color blanco específico para la portada */
+    width: 21cm; /* Ancho A4 */
+    height: 29.7cm; /* Alto A4 */
     max-width: 21cm;
     min-width: 21cm;
     max-height: 29.7cm;
@@ -30,14 +31,14 @@
 }
 
 .upper {
-    flex: 0 0 2.97cm; /* Ocupa el 10% de la altura total */
+    flex: 0 0 2.97cm; /* 10% de la altura total */
     display: flex;
     align-items: center;
     justify-content: flex-end; /* Alineación a la derecha */
 }
 
 .title {
-    flex: 0 0 20.79cm; /* Ocupa el 70% de la altura total */
+    flex: 0 0 20.79cm; /* 70% de la altura total */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centra verticalmente el título y subtítulo */
@@ -61,13 +62,13 @@
 }
 
 .properties {
-    flex: 0 0 5.94cm; /* Ocupa el 20% de la altura total */
+    flex: 0 0 5.94cm; /* 20% de la altura total */
     display: flex;
     flex-direction: column;
     justify-content: flex-end; /* Alineación en la parte inferior */
     align-items: flex-start;
-    gap: 0.2cm; /* Espaciado entre párrafos */
-    padding-bottom: 1cm;
+    gap: 0.2cm; /* Espacio entre párrafos */
+    padding-bottom: 1.2cm;
 
     p {
         padding-left: 1cm;
@@ -76,8 +77,19 @@
     }
 }
 
-body {
-    font-family: 'Source Sans Pro', sans-serif;
+/* Aplica color negro solo al contenido dentro de .md-content__inner */
+.md-content__inner p,
+.md-content__inner h1,
+.md-content__inner h2,
+.md-content__inner h3,
+.md-content__inner h4,
+.md-content__inner h5,
+.md-content__inner h6,
+.md-content__inner li,
+.md-content__inner a,
+.md-content__inner span,
+.md-content__inner div {
+    color: black !important; /* Color negro solo para el contenido general, excluyendo la portada */
 }
 
 p {
@@ -85,24 +97,24 @@ p {
 }
 
 table {
-    border-collapse: collapse !important;
-    width: 100% !important;
+    border-collapse: collapse !important; /* Elimina los espacios entre celdas */
+    width: 100% !important; /* Asegura que la tabla ocupe el ancho completo */
+}
 
-    tr:nth-child(even) {
-        background-color: #FFE5EA;
-    }
+tr:nth-child(even) {
+    background-color: #FFE5EA; /* Color de fondo para las filas pares */
+}
 
-    th {
-        background-color: #E93456 !important;
-        color: white !important;
-        font-weight: bold !important;
-        padding: 10px !important;
-        text-transform: uppercase;
-    }
+th {
+    background-color: #E93456 !important; /* Fondo rojo para encabezados */
+    color: white !important; /* Texto blanco en encabezados */
+    font-weight: bold !important;
+    padding: 10px !important;
+    text-transform: uppercase; /* Encabezados en mayúsculas */
+}
 
-    th, td {
-        vertical-align: middle !important;
-        text-align: left !important;
-        padding: 10px !important;
-    }
+th, td {
+    vertical-align: middle !important; /* Centrado vertical en celdas */
+    text-align: left !important; /* Alineación de texto a la izquierda */
+    padding: 10px !important; /* Espaciado uniforme en las celdas */
 }
