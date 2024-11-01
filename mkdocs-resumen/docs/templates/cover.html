@@ -1,110 +1,97 @@
 <article id="doc-cover">
-    <p class="course">{{course_year}}</p>
     <div class="wrapper">
-        <h1>{{ cover_title | e }}</h1>
-        <h2>{{ cover_subtitle | e }}</h2>
+        <div class="upper">
+            <p>{{course_year}}</p> <!-- Año del curso, alineado a la derecha -->
+        </div>
+        <div class="title">
+            <h1>{{ cover_title | e }}</h1> <!-- Título principal -->
+            <h2>{{ cover_subtitle | e }}</h2> <!-- Subtítulo -->
+        </div>
+        <div class="properties">
+            <p>---------------------------------------------</p> <!-- Línea separadora -->
+            <p id="author">{{ department | e }}</p> <!-- Departamento -->
+            <p id="copyright">{{ institution | e }}</p> <!-- Institución -->
+        </div>
     </div>
 </article>
-<div class="properties">
-    <address>
-            <p>---------------------------------------------</p>
-        {% if department is defined %}
-            <p id="department">{{ department | e }}</p>
-        {% endif %}
-        {% if institution is defined %}
-        <p id="institution">{{ institution | e }}</p>
-        {% endif %}
-    </address>
-</div>
+
 <style>
-@page :first {
+@page {
     size: A4;
-    margin: 2cm 2cm 11cm 1cm;
-    background-image: url('{{ cover_logo | to_url }}');
+    margin: 2.54cm;
+    font-family: 'Source Sans Pro', sans-serif;
+    background: none;
+}
+
+@page :first {
+    margin: 0; /* Sin margen en la primera página */
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column; /* Disposición en columna de los bloques */
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 2cm;
+    background-image: url('{{ cover_logo | to_url }}'); /* Imagen de fondo */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    width: 21cm; /* Anchura de A4 */
+    height: 29.7cm; /* Altura de A4 */
+    max-width: 21cm;
+    min-width: 21cm;
+    max-height: 29.7cm;
+    min-height: 29.7cm;
 }
 
-@page {
-    size: A4;
-    margin: 2.54cm; /* Aplica margen de 2.54cm a todo el documento */
-    font-family: 'Source Sans Pro', sans-serif;
+.upper {
+    flex: 0 0 2.97cm; /* Ocupa el 10% de la altura total */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Alineación a la derecha */
 }
 
-#doc-cover {
+.title {
+    flex: 0 0 20.79cm; /* Ocupa el 70% de la altura total */
     display: flex;
     flex-direction: column;
-    height: 16.7cm; /* Altura total de la página */
-    color: white !important;
-    overflow: hidden; /* Previene desbordamiento */
-}
+    justify-content: center; /* Centra verticalmente el título y subtítulo */
 
-.cover-year {
-    flex: 0 0 2cm;
-    background-color: #E93456  !important;
-    text-align: right;
-    font-size: 11pt;
-    margin: 0cm;
-    color: white !important;
-}
-
-.cover-title {
-    flex: 0 0 18cm; /* Permite que crezca y ocupe el espacio disponible */
-    max-height: 18cm;
-    background-color: #E93456  !important;
-    align-items: flex-start;
-    text-align: left !important;
-    padding: 1cm;
-    margin: 0cm;
-    color: white !important;
+    h1, h2 {
+        border-bottom: none !important;
+        text-align: left !important;
+        padding-left: 1cm;
+        margin: 0;
+    }
 
     h1 {
-        padding-top: 4cm;
+        padding-top: 1cm;
         font-size: 36pt;
-        border-bottom: none !important; 
-        margin-bottom: 0.4cm; /* Reduce la separación inferior de h1 */
+        margin-bottom: 0.4cm;
     }
+
     h2 {
-        border-bottom: none !important; 
-        font-size: 16pt;
-        margin-top: 0; /* Elimina el margen superior de h2 */
+        font-size: 18pt;
     }
 }
 
-.cover-department {
-    text-align: left !important;
-    position: absolute;
-    bottom: -10cm; /* Ajusta la distancia desde el borde inferior */
-    left: 0cm;    
-    background-color: #E93456  !important;
-    color: white !important;
-    max-width: 70%;
-    padding: 1cm;
-    overflow-y: auto; /* Permite scroll si el contenido es muy largo */
-}
+.properties {
+    flex: 0 0 5.94cm; /* Ocupa el 20% de la altura total */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Alineación en la parte inferior */
+    align-items: flex-start;
+    gap: 0.2cm; /* Espaciado entre párrafos */
+    padding-bottom: 1cm;
 
-/* El resto de tus estilos permanecen igual */
-.cover-title h1 {
-    border-bottom: 1px solid #E93456  !important; }
-
-.cover-title h2 {
-    border-bottom: 1px solid #E93456  !important; }
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('assets/fonts/SourceSans3-Regular.ttf.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('assets/fonts/SourceSans3-Bold.ttf.woff') format('woff');
-    font-weight: bold; /* O ajusta según sea necesario */
-    font-style: italic; /* Cambia a normal si no deseas itálico */
+    p {
+        padding-left: 1cm;
+        font-size: 11pt;
+        margin: 0; /* Sin márgenes adicionales */
+    }
 }
 
 body {
@@ -116,28 +103,25 @@ p {
 }
 
 table {
-  border-collapse: collapse !important;
-  width: 100% !important;
+    border-collapse: collapse !important;
+    width: 100% !important;
 
-  tr {
-    &:nth-child(even) {
-      background-color: #FFE5EA;
+    tr:nth-child(even) {
+        background-color: #FFE5EA;
     }
-  }
 
-  th {
-    background-color: #E93456 !important;
-    color: white !important;
-    font-weight: bold !important;
-    padding: 10px !important;
-    text-transform: uppercase;
-  }
+    th {
+        background-color: #E93456 !important;
+        color: white !important;
+        font-weight: bold !important;
+        padding: 10px !important;
+        text-transform: uppercase;
+    }
 
-  th, td {
-    vertical-align: middle !important;
-    text-align: left !important;
-    padding: 10px !important;
-    height: 100% !important;
-  }
+    th, td {
+        vertical-align: middle !important;
+        text-align: left !important;
+        padding: 10px !important;
+    }
 }/* Añadir reglas que solamente apliquen al documento del resumen */
 </style>
