@@ -11,11 +11,14 @@ Este repositorio contiene los archivos fuente y los scripts necesarios para la g
 
 ## Listado de módulos
 
-Con el objetivo de mantener el orden y facilitar la identificación de los módulos en la carpeta `src`, cada docente debe añadir su módulo en el siguiente listado a medida que lo vaya completando.
+Con el objetivo de mantener el orden y facilitar la identificación de los módulos en la carpeta `src`, cada docente debe añadir el nombre de su módulo en la siguiente tabla a medida que lo vaya completando.
 
-- `mod1`: 
-- `mod2`: 
-- `mod3`: 
-- `mod4`: 
-- `mod5`: 
-- `mod6`: 
+| Nombre del fichero | Módulo                              |
+|--------------------|-------------------------------------|
+| `mod1`             |                                     |
+| `mod2`             |                                     |
+| `mod3`             |                                     |
+| `mod4`             |                                     |
+| `mod5`             |                                     |
+| `mod6`             |                                     |
+| `mod7`             |                                     |
