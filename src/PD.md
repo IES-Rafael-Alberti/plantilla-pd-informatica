@@ -65,7 +65,7 @@ Orden de 20 de agosto de 2010 (BOJA 169, 30 de agosto), por la que se regula la 
 
 ## Contextualización
 
-Real Decreto 1147/2011, de 29 de julio, (BOE 182, de 30 de julio) por el que se establece la ordenación general de la formación profesional del sistema educativo. Deroga el Decreto 1538/2006.
+Real Decreto 659/2023, de 18 de julio (BOE 174, 22 de julio), por el que se desarrolla la ordenación del Sistema de Formación Profesional. Deroga el decreto 1147/2011.
 
 ## Regulación y evaluación
 
@@ -196,7 +196,7 @@ El alumno debe evitar utilizar permanentemente traductores automáticos, no solo
 
 Es un hecho indiscutible que los alumnos y alumnas son diferentes por su cultura, intereses, estilos de aprendizaje, motivaciones y tiempo que necesitan para aprender y esta necesidad, requiere diferentes grados de atención educativa.
 
-El art 5.3 del Real Decreto 1147/2011, indica que las enseñanzas de formación profesional se adaptarán al alumnado con necesidad específica de apoyo educativo para que se garantice su acceso, permanencia y progresión.
+El art 4.1 del Real Decreto 659/2023, indica que Los grados deben adaptarse a las personas con necesidades específicas de apoyo educativo o formativo para asegurar su acceso, permanencia y progreso en el aprendizaje, facilitando la adquisición de las competencias necesarias para el perfil profesional asociado al grado.
 
 En la Formación Profesional Inicial no se contemplan adaptaciones curriculares significativas, es por ello que, solo se podrán contemplar medidas no significativas de acceso al currículo. Por este motivo, la forma de atender a la diversidad desde este módulo será sobre todo metodológica.
 
@@ -332,7 +332,7 @@ Además, está previsto realizar un cuestionario que se pasará a todos los alum
 
 # Módulos profesionales
 
-Los módulos profesionales de este curso de especialización quedan desarrollados en el anexo I de este real decreto, cumpliendo lo previsto en el artículo 10, apartado 3 del Real Decreto 1147/2011, de 29 de julio, por el que se establece la ordenación general de la formación profesional del sistema educativo. Son los que a continuación se relacionan:
+Los módulos profesionales de este curso de especialización quedan desarrollados en el anexo I de este real decreto, cumpliendo lo previsto en el artículo 12, apartado 3 del Real Decreto 659/2023, de 18 de julio, por el que se desarrolla la ordenación del Sistema de Formación Profesional. Son los que a continuación se relacionan:
 
 - Código del módulo 1. Título del módulo 1.
 - Código del módulo 2. Título del módulo 2.
