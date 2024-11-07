@@ -13,7 +13,7 @@ Este repositorio contiene los archivos fuente y los scripts necesarios para la g
 
 Con el objetivo de mantener el orden y facilitar la identificación de los módulos en la carpeta `src`, cada docente debe añadir el nombre de su módulo en la siguiente tabla a medida que lo vaya completando.
 
-| Nombre del fichero | Módulo                              |
+| Nombre del fichero | Nombre del módulo                              |
 |--------------------|-------------------------------------|
 | `mod1`             |                                     |
 | `mod2`             |                                     |
